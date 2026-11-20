@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小さな景色の街 AI</title>
+  <style>
+    body {
+      margin: 0;
+      background: #e9f5e7;
+      font-family: sans-serif;
+      text-align: center;
+      color: #49634b;
+    }
+    h1 { margin-top: 40px; }
+    .town {
+      margin: 30px auto;
+      padding: 35px 10px;
+      max-width: 450px;
+      background: #fffdf2;
+      border-radius: 25px;
+    }
+    .characters {
+      font-size: 65px;
+      margin: 30px 0;
+    }
+    button {
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 20px;
+      background: #b7dfb0;
+      font-size: 16px;
+      margin: 5px;
+    }
+    #message { min-height: 50px; }
+  </style>
+</head>
+<body>
+  <h1>🌷 小さな景色の街 AI 🌷</h1>
+  <div class="town">
+    <h2>☕ 木漏れ日の喫茶室</h2>
+    <p>今日もやさしい風が吹いています。</p>
+    <div class="characters">🐈 🐹</div>
+    <button onclick="talk('cat')">猫さんと話す</button>
+    <button onclick="talk('pon')">ぽん君と話す</button>
+    <p id="message">誰とお話しする？💕</p>
+  </div>
+  <script>
+    function talk(who) {
+      const messages = {
+        cat: [
+          "猫さん：今日はいいお天気だね🌷",
+          "猫さん：喫茶室でひと休みしよう☕"
+        ],
+        pon: [
+          "ぽん君：お花を見つけたよ！🌸",
+          "ぽん君：一緒にお散歩しよう🐹"
+        ]
+      };
+      const lines = messages[who];
+      const line = lines[Math.floor(Math.random() * lines.length)];
+      document.getElementById("message").textContent = line;
+    }
+  </script>
+</body>
+</html>
